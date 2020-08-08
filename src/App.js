@@ -8,15 +8,14 @@ class App extends Component {
 
   personClicked() {
     this.setState({ personClicks: this.state.personClicks +1 });
-    // DO NOT DO THIS
-    this.state.personClicks = this.state.PersonClicks + 1 
   }
+
   render(){
     return (
       <div className="App">
-        <Test person="Tony" />
-        <Test person="Mary" />
-        <Test person="Susan" />
+        <Test person="Tony" personClicked={this.personClicked.bind(this)}/>
+        <Test person="Mary" personClicked={this.personClicked.bind(this)}/>
+        <Test person="Susan" personClicked={this.personClicked.bind(this)}/>
         Person Clicks: {this.state.personClicks}
       </div>
     );
