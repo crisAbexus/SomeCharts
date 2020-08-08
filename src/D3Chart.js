@@ -8,7 +8,15 @@ export default class D3chart {
         .attr('width', 800)
         .attr('height', 500)
     d3.json(url).then(data => {
-      console.log(data);
+      const rects = svg.selectAll('rect')
+        .data(data)
+
+      rects.enter().append('rect')
+        .attr('x', (d,i)=> i*100)
+        .attr('y', 0)
+        .attr('width', 50)
+        .attr('height', d => d.height)
+        .attr('fill','grey')
     })
   }
 }
