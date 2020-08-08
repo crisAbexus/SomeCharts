@@ -7,8 +7,6 @@ export default class ChartWrapper extends Component {
 	}
 
 	render() {
-		return <div ref="chart">
-			
-		</div>
+		return <div ref="chart"></div>
 	}
 }
