@@ -6,16 +6,16 @@ class App extends Component {
     personClicks: 0
   }
 
-  personClicked() {
+  personClicked = () => {
     this.setState({ personClicks: this.state.personClicks +1 });
   }
 
   render(){
     return (
       <div className="App">
-        <Test person="Tony" personClicked={this.personClicked.bind(this)}/>
-        <Test person="Mary" personClicked={this.personClicked.bind(this)}/>
-        <Test person="Susan" personClicked={this.personClicked.bind(this)}/>
+        <Test person="Tony" personClicked={this.personClicked} />
+        <Test person="Mary" personClicked={this.personClicked} />
+        <Test person="Susan" personClicked={this.personClicked} />
         Person Clicks: {this.state.personClicks}
       </div>
     );
