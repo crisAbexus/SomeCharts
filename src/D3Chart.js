@@ -10,6 +10,14 @@ export default class D3chart {
     const rects = svg.selectAll('rect')
       .data(data)
     
+    // data.forEach((d,i) => {
+    //   svg.append('rect')
+    //     .attr('x',i* 100)
+    //     .attr('y',50)
+    //     .attr('width', 50)
+    //     .attr('height', d)
+    //     .attr('fill', 'grey')
+
     rects.enter().append('rect')
       .attr('x', (d,i) => i *100)
       .attr('y', 50)
