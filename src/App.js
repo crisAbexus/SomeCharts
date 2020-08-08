@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Test from './Test';
-
+import ChartWrapper from './ChartWrapper';
 class App extends Component {
   state = {
     personClicks: 0
@@ -12,12 +11,7 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
-        <Test person="Tony" personClicked={this.personClicked} />
-        <Test person="Mary" personClicked={this.personClicked} />
-        <Test person="Susan" personClicked={this.personClicked} />
-        Person Clicks: {this.state.personClicks}
-      </div>
+      <ChartWrapper />
     );
   }
 }
