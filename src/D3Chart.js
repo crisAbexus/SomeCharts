@@ -39,7 +39,7 @@ export default class D3chart {
       vis.data = data
       d3.interval(() => {
         vis.update()
-      }, 1000)
+      }, 10000)
     })
   }
 
@@ -64,9 +64,11 @@ export default class D3chart {
     const yAxisCall = d3.axisLeft(y)
     vis.yAxisGroup.call(yAxisCall)
 
-    // const rects = vis.svg.selectAll('rect')
-    // .data(data)
+    const rects = vis.svg.selectAll('rect')
+    .data(vis.data)
 
+    console.log(rects);
+    
     // rects.enter().append('rect')
     //  .attr('x', d => x(d.name))
     //  .attr('y', d => y(d.height))
