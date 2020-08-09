@@ -1,15 +1,18 @@
 import * as d3 from 'd3';
 
 const url = 'https://udemy-react-d3.firebaseio.com/tallest_men.json'
-const WIDTH = 800;
-const HEIGHT = 500;
+const MARGIN = { TOP: 10, BOTOOM: 50, LEFT: 50, RIGHT: 10 }
+const WIDTH = 800 - MARGIN.LEFT - MARGIN.RIGHT;
+const HEIGHT = 500 - MARGIN.TOP - MARGIN.BOTOOM;
 
 export default class D3chart {
   constructor(element) {
     const svg = d3.select(element)
       .append('svg')
-        .attr('width', WIDTH)
-        .attr('height', HEIGHT)
+        .attr('width', WIDTH + MARGIN.LEFT + MARGIN.RIGHT)
+        .attr('height', HEIGHT + MARGIN.TOP + MARGIN.BOTOOM)
+      .append("g")
+				.attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`)
 
     d3.json(url).then(data => {
       
@@ -23,10 +26,12 @@ export default class D3chart {
         .padding(0.4)
 
       const xAxisCall = d3.axisBottom(x)
-      svg.call(xAxisCall)
+      svg.append('g')
+        .attr('transform', `translate(0, ${HEIGHT})`)
+        .call(xAxisCall)
 
       const yAxisCall = d3.axisLeft(y)
-      svg.call(yAxisCall)
+      svg.append('g').call(yAxisCall)
 
       const rects = svg.selectAll('rect')
         .data(data)
