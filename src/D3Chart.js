@@ -12,7 +12,12 @@ export default class D3chart {
         .attr('width', WIDTH + MARGIN.LEFT + MARGIN.RIGHT)
         .attr('height', HEIGHT + MARGIN.TOP + MARGIN.BOTOOM)
       .append("g")
-				.attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`)
+        .attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`)
+        
+    d3.interval(() => {
+      console.log('updating');
+      
+    },1000)
 
     d3.json(url).then(data => {
       
