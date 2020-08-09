@@ -18,7 +18,7 @@ export default class D3chart {
       
       const y = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.height)])
-        .range([0, HEIGHT])
+        .range([HEIGHT, 0])
 
       const x = d3.scaleBand()
         .domain(data.map(d => d.name))
