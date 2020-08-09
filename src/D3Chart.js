@@ -40,7 +40,7 @@ export default class D3chart {
         .attr('x', d => x(d.name))
         .attr('y', d => y(d.height))
         .attr('width', x.bandwidth)
-        .attr('height', d => y(d.height))
+        .attr('height', d => HEIGHT - y(d.height))
         .attr('fill','grey')
     })
   }
