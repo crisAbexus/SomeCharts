@@ -38,7 +38,7 @@ export default class D3chart {
 
       rects.enter().append('rect')
         .attr('x', d => x(d.name))
-        .attr('y', d => HEIGHT -y(d.height))
+        .attr('y', d => y(d.height))
         .attr('width', x.bandwidth)
         .attr('height', d => y(d.height))
         .attr('fill','grey')
