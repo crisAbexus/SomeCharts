@@ -43,8 +43,8 @@ export default class D3chart {
         .text('The world\'s tallest men')
       
       svg.append('text')
-        .attr('x', -20)
-        .attr('y', HEIGHT /2)
+        .attr('x', -(HEIGHT / 2))
+        .attr('y', -50)
         .attr('text-anchor', 'middle')
         .text('Height in cm')
         .attr('transform', 'rotate(-90)')
