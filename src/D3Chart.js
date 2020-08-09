@@ -8,6 +8,12 @@ export default class D3chart {
         .attr('width', 800)
         .attr('height', 500)
     d3.json(url).then(data => {
+      const y = d3.scaleLinear()
+        .domain([0, 272])
+        .range([0, 500])
+
+      console.log(`y(100)=${y(100)}\ny(0)=${y(0)}\ny(272)=${y(272)} `)
+
       const rects = svg.selectAll('rect')
         .data(data)
 

@@ -11,9 +11,8 @@ class App extends Component {
             <Navbar.Brand>Barchartly</Navbar.Brand>
         </Navbar>
         <Container>
-
+          <ChartWrapper />
         </Container>
-        <ChartWrapper />
       </>
     );
   }
