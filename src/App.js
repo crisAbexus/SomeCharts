@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { json } from 'd3'
+
 import ChartWrapper from './ChartWrapper';
+import Table from "./Table";
 
 const URL = 'https://udemy-react-d3.firebaseio.com/children.json'
 class App extends Component {
@@ -35,7 +37,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col md={6} xs={12}>{this.renderChart()}</Col>
-            <Col md={6} xs={12}></Col>
+            <Col md={6} xs={12}><Table data={this.state.data} /></Col>
           </Row>
         </Container>
       </div>
