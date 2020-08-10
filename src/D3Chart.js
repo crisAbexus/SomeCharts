@@ -39,7 +39,14 @@ export default class D3chart {
       d3.json(`${url}/tallest_men.json`),
       d3.json(`${url}/tallest_women.json`)
     ]).then((datasets)=>{
-      console.log(datasets);      
+      const [men, women] = datasets;
+      let flag = true
+
+      d3.interval(() => {
+        vis.data = flag ? men : women
+        vis.update()
+        flag =! flag
+      },1000)
     })
   }
 
