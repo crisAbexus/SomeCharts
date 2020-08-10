@@ -6,7 +6,11 @@ import Col from 'react-bootstrap/Col';
 import ChartWrapper from './ChartWrapper';
 import GenderDropdown from './GenderDropdown';
 class App extends Component {
+  state = {
+    gender: 'men'
+  }
 
+  genderSelected = (gender) => this.setState({ gender })
   render(){
     return (
       <>
@@ -15,7 +19,7 @@ class App extends Component {
         </Navbar>
         <Container>
           <Row>
-            <Col xs={12}><GenderDropdown /></Col>
+            <Col xs={12}><GenderDropdown genderSelected={this.genderSelected}/></Col>
           </Row>
           <Row>
             <Col xs={12}><ChartWrapper /></Col>
