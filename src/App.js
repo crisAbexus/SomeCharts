@@ -15,7 +15,7 @@ class App extends Component {
   componentWillMount() {
     json(URL)
       .then(data => {
-        this.setState({ data })        
+        this.setState({ data })
       })
       .catch(error => console.log(error))
   }
