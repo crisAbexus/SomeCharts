@@ -10,7 +10,7 @@ export default class Table extends Component {
 
 			return d.name != event.target.name
 		})
-		console.log(newData);		
+		this.props.updateData(newData)
 	}
 
 	renderRows() {
