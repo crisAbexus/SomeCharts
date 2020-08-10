@@ -42,6 +42,9 @@ export default class D3chart {
       const [men, women] = datasets;
       let flag = true
 
+      vis.data = women
+      vis.update()
+
       d3.interval(() => {
         vis.data = flag ? men : women
         vis.update()
