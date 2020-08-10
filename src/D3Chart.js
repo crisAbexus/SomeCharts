@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-const url = 'https://udemy-react-d3.firebaseio.com/tallest_men.json'
+const url = 'https://udemy-react-d3.firebaseio.com'
 const MARGIN = { TOP: 10, BOTOOM: 50, LEFT: 70, RIGHT: 10 }
 const WIDTH = 800 - MARGIN.LEFT - MARGIN.RIGHT;
 const HEIGHT = 500 - MARGIN.TOP - MARGIN.BOTOOM;
@@ -35,11 +35,11 @@ export default class D3chart {
 
     vis.yAxisGroup = vis.svg.append('g')
 
-    d3.json(url).then(data => {
-      vis.data = data
-      d3.interval(() => {
-        vis.update()
-      }, 10000)
+    Promise.all([
+      d3.json(`${url}/tallest_men.json`),
+      d3.json(`${url}/tallest_women.json`)
+    ]).then((datasets)=>{
+      console.log(datasets);      
     })
   }
 
