@@ -5,6 +5,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export default class Table extends Component {
+	handleRemove = (event) => {
+		const newData = this.props.data.filter(d=>{
+
+			return d.name != event.target.name
+		})
+		console.log(newData);		
+	}
+
 	renderRows() {
 		return(
 			this.props.data.map(student => {
@@ -22,6 +30,7 @@ export default class Table extends Component {
 								type={'button'}
 								style={{ width: "100%" }}
 								name ={student.name}
+								onClick={this.handleRemove}
 							>
 								Remove
 							</Button>
